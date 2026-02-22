@@ -1,0 +1,298 @@
+/* Limpeza de margens padrão e definição de fontes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Paleta de cores: Fundo escuro e detalhes em dourado (tradição) */
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* --- Cabeçalho --- */
+header {
+  background-color: #0d0d0d;
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #d4af37; /* Linha dourada */
+}
+
+.hamburger {
+  display: none; /* Escondido por padrão (em computadores) */
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1001; /* Fica acima do menu lateral escuro */
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #d4af37; /* Cor dourada */
+  transition: all 0.3s ease-in-out;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d4af37;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #d4af37;
+}
+
+/* --- Seções Gerais --- */
+section {
+  padding: 4rem 5%;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #d4af37;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Hero (Início) --- */
+.hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* ATUALIZADO: Imagem de paisagem (montanhas) do banco público Picsum */
+  background:
+    linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)),
+    url("https://picsum.photos/id/1015/1920/1080") no-repeat center center/cover;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  padding: 12px 24px;
+  background-color: #d4af37;
+  color: #121212;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #b5952f;
+}
+
+/* --- Carrossel --- */
+#carrossel-sec {
+  background-color: #1a1a1a;
+}
+
+.carousel-container {
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover; /* Garante que a imagem se ajuste bem */
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+  background-color: #d4af37;
+  color: #121212;
+}
+
+#prevBtn {
+  left: 10px;
+}
+#nextBtn {
+  right: 10px;
+}
+
+/* --- Quem Sou --- */
+.content-split {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.image-box img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  border: 3px solid #d4af37;
+  object-fit: cover;
+}
+
+.text-box p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+/* --- O que Defendo (Cards) --- */
+#defendo {
+  background-color: #1a1a1a;
+}
+
+.cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.card {
+  background-color: #242424;
+  padding: 2rem;
+  border-radius: 8px;
+  flex: 1;
+  text-align: center;
+  border-top: 4px solid #d4af37;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h3 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+/* --- Rodapé --- */
+footer {
+  background-color: #0d0d0d;
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid #333;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* --- Responsividade (Para Celulares) --- */
+@media (max-width: 768px) {
+  .content-split {
+    flex-direction: column;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Começa escondido à direita */
+    width: 250px;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    background-color: #121212;
+    border-left: 2px solid #d4af37;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    transition: right 0.4s ease-in-out; /* Animação de deslizar */
+    z-index: 1000;
+  }
+
+  /* Classe que o JavaScript vai adicionar para abrir o menu */
+  nav.active {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1rem; /* Aumenta o espaço entre os links */
+    margin-top: 60px;
+    margin-left: 20px;
+  }
+
+  /* Animação do Hamburguer virando um 'X' */
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0; /* Esconde a barra do meio */
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
